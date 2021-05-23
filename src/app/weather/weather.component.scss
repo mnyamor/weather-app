@@ -1,0 +1,89 @@
+.weather {
+  &__location {
+    border-bottom: solid thin white;
+
+    &-name {
+      text-transform: uppercase;
+      color: #E8E8E8;
+      color: rgba(255, 255, 255, 0.7);
+      font-weight: 100;
+      letter-spacing: 0.025em;
+      margin: 0;
+      padding: 0;
+      text-align: left;
+      line-height: 1.1;
+    }
+  }
+  &__btn {
+    border-radius: 2rem;
+  }
+
+  &__switch {
+    font-size: 1.5rem;
+    font-weight: 300;
+
+    a {
+      text-decoration: none;
+      color: #0b4266;
+      border-radius: 50%;
+      height: 30px;
+      width: 30px;
+      display: inline-block;
+      font-size: 1rem;
+      text-align: center;
+      line-height: 28px;
+      margin-bottom: 8px;
+      background: transparent;
+
+      &.active {
+        color: white;
+        background: #073552;
+
+      }
+    }
+
+    .divider {
+      color: white;
+      margin: 0 5px;
+    }
+  }
+
+  &__description {
+    color: white;
+    font-weight: 100;
+    line-height: 1.1;
+    letter-spacing: 0.025em;
+    margin: 0;
+    padding: 0;
+    text-align: right;
+  }
+
+  &__icon {
+    font-size: 6.5rem;
+  }
+
+  &__temperature {
+    font-weight: 300;
+    color: white;
+    text-align: right;
+
+    &-num {
+      font-size: 5.25em;
+    }
+  }
+
+  &__stats {
+    margin-bottom: 1em;
+    padding-bottom: 0;
+    border-top: none;
+    border-bottom: none;
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+    color: white;
+    font-weight: 100;
+  }
+
+  &__value {
+    margin-top: 1em;
+    font-size: 1.44em;
+  }
+}

@@ -1,0 +1,25 @@
+<ng-container *ngIf="recentSearchList?.length">
+  <div class="recent-search">
+    <div class="d-flex justify-content-between my-2">
+      <h4 class="recent-search__heading m-0">Recent searches</h4>
+      <ng-content></ng-content>
+    </div>
+    <div *ngFor="let item of recentSearchList" class="recent-search__row mb-1 py-2 container">
+      <div class="row">
+        <div class="recent-search__location col">{{item.name}}</div>
+        <div class="recent-search__icon col text-end"><i class='{{item.icon}}'></i></div>
+        <div class="recent-search__wind col text-end">
+          <div class="recent-search__label"><i class='wi wi-thermometer'></i> Temperature</div>
+          <div class="recent-search__label">
+            {{item?.temperature}}
+            <i class='wi wi-fahrenheit'></i>
+          </div>
+        </div>
+        <div class="recent-search__wind col text-end">
+          <div class="recent-search__label"><i class='wi wi-strong-wind'></i> Wind</div>
+          <div class="recent-search__label">{{item?.windSpeed}} mph</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-container>

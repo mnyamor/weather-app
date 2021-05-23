@@ -1,1 +1,24 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,300,100');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/weather-icons/1.3.2/css/weather-icons.min.css');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.12/css/weather-icons.min.css');
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
+@import 'assets/variables';
+
+body {
+  @include gradient-y($body-bg-start-gradient-color 0%, $body-bg-end-gradient-color, 0, 100%);
+  min-height: 100vh;
+}
+
+
+//overrides... [ngb-typehead]
+#ngb-live {
+  display: none !important;
+}
+
+.search__results {
+  border-radius: 0;
+  width: 100%;
+  max-width: 936px;
+}

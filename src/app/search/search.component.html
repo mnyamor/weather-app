@@ -1,0 +1,28 @@
+<div class="search__container">
+  <label for="search"></label>
+  <input (selectItem)="selectCity($event)"
+         [(ngModel)]="model"
+         [class.is-invalid]="searchFailed"
+         [container]="'body'"
+         [inputFormatter]="searchFormatter"
+         [ngbTypeahead]="search"
+         [popupClass]="'search__results'"
+         [resultTemplate]="resultTemplate"
+         class="search__input"
+         id="search"
+         placeholder="search" type="text"/>
+  <!--<small *ngIf="searching" class="form-text text-muted">searching...</small>
+  <div *ngIf="searchFailed" class="invalid-feedback">Sorry, suggestions could not be loaded.</div> -->
+</div>
+<app-weather *ngIf="searchResults?.name" class="row"
+             [weatherData]="searchResults"
+             [recentSearchList]="recentSearches">
+</app-weather>
+
+<!-- result template -->
+<ng-template #resultTemplate let-r="result" let-t="term">
+  <img alt='' src='http://openweathermap.org/images/flags/{{r.country.toLowerCase()}}.png'>
+  <ngb-highlight [result]="r.name" [term]="t" class="mx-2"></ngb-highlight>
+</ng-template>
+
+

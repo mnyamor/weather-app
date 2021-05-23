@@ -1,0 +1,90 @@
+<div *ngIf="weatherData" class='d-flex flex-column'>
+  <div class="weather__location">
+    <div class="d-flex justify-content-between align-items-center">
+      <h1 class="weather__location-name">{{weatherData?.name}}</h1>
+      <div class="weather__switch">
+        <a (click)="toggleActiveClass(false)" [class.active]="!isActive" class='fahrenheit' href="#"
+           id='fahrenheit1'>&deg;F</a>
+        <span class='divider secondary'>|</span>
+        <a (click)="toggleActiveClass(true)" [class.active]="isActive" class='celsius' href="#"
+           id='celsius2'>&deg;C</a>
+      </div>
+    </div>
+  </div>
+  <div class="d-flex flex-row justify-content-between mt-4">
+    <div class=" col">
+      <div class="container">
+        <div class="row">
+          <div class="weather__icon col text-center text-white">
+            <i class="{{weatherData?.icon}}"></i>
+          </div>
+          <div class='weather__temperature col'>
+            <div class="col">
+              <span class="weather__temperature-num">{{getUnitConversion(weatherData.temperature)}}&deg;</span>
+            </div>
+          </div>
+        </div>
+        <h3 class="weather__description">{{weatherData?.description}}</h3>
+      </div>
+    </div>
+    <div class="weather__stats col">
+      <div class="container">
+        <div class="row mb-2">
+          <div class="col">
+            <div class="weather__stats__value">
+              <i class='wi wi-thermometer'></i>
+              {{getUnitConversion(weatherData.temp_max)}}&deg;
+              {{isActive ? 'C' : 'F'}}
+            </div>
+            <div class="weather__stats__label">High</div>
+          </div>
+          <div class="col">
+            <div
+              class="weather__stats__value">
+              <i class='wi wi-thermometer-exterior'></i>
+              {{getUnitConversion(weatherData.temp_min)}}&deg;{{isActive ? 'C' : 'F'}}
+            </div>
+            <div class="weather__stats__label">Low</div>
+          </div>
+        </div>
+        <div class="row mb-2">
+          <div class="col">
+            <div class="weather__stats__value">
+              <i class='wi wi-strong-wind'></i>
+              {{convertUnits(weatherData.windSpeed)}}{{isActive ? 'km/h' : 'mp/h'}}
+            </div>
+            <div class="weather__stats__label">Wind</div>
+          </div>
+          <div class="col">
+            <div class="weather__stats__value">
+              <i class='wi wi-humidity'></i>
+              {{weatherData.humidity}}%
+            </div>
+            <div class="weather__stats__label">Humidity</div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <div class="weather__stats__value">
+              <i class='wi wi-sunrise'></i>
+              {{weatherData?.sunrise | date:'shortTime'}}</div>
+            <div class="weather__stats__label">Sunrise</div>
+          </div>
+          <div class="col">
+            <div class="weather__stats__value">
+              <i class='wi wi-sunset'></i>
+              {{weatherData?.sunset | date:'shortTime'}}
+            </div>
+            <div class="weather__stats__label">Sunset</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-recent-search-list [recentSearchList]="recentSearchList">
+  <button (click)="clearRecentSearches()"
+          class="btn btn-sm px-3 btn-light weather__btn">
+    Clear recent searches
+  </button>
+</app-recent-search-list>
