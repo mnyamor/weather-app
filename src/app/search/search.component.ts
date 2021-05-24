@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {BehaviorSubject, Observable, of, OperatorFunction} from 'rxjs';
+import {Observable, of, OperatorFunction} from 'rxjs';
 import {WeatherService} from '../services/weather.service';
 import {IWeatherData} from '../types/weather';
 import {catchError, debounceTime, distinctUntilChanged, filter, switchMap, tap} from 'rxjs/operators';
@@ -20,7 +20,6 @@ export class SearchComponent extends SubscriptionsManagerDirective implements On
   searchResults: IWeatherData = {} as IWeatherData;
   searchTerm = '';
   recentSearches: any[] = [];
-  recentSearches$: BehaviorSubject<IWeatherData[]> = new BehaviorSubject<IWeatherData[]>(null);
 
   constructor(private weatherService: WeatherService) {
     super();
