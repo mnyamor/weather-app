@@ -1,44 +1,57 @@
+$weather-location-name-color: #E8E8E8;
+$weather-location-name-letter-spacing: 0.025em;
+$weather-location-name-line-height: 1.1;
+$weather-location-btn-radius: 2rem;
+$weather-location-switch-font-size: 1.5rem;
+$weather-location-link-color: #0b4266;
+$weather-location-link-active-color: #073552;
+$weather-location-link-width: 30px;
+$weather-location-link-height: $weather-location-link-width;
+$weather-location-link-line-height: 28px;
+$weather-link-divider-margin: 5px;
+$weather-description-letter-spacing: 0.025em;
+$weather-stats-border-color: #fff;
+
 .weather {
   &__location {
     border-bottom: solid thin white;
 
     &-name {
       text-transform: uppercase;
-      color: #E8E8E8;
-      color: rgba(255, 255, 255, 0.7);
+      color: $weather-location-name-color;
       font-weight: 100;
-      letter-spacing: 0.025em;
+      letter-spacing: $weather-location-name-letter-spacing;
       margin: 0;
       padding: 0;
       text-align: left;
-      line-height: 1.1;
+      line-height: $weather-location-name-line-height;
     }
   }
+
   &__btn {
-    border-radius: 2rem;
+    border-radius: $weather-location-btn-radius;
   }
 
   &__switch {
-    font-size: 1.5rem;
+    font-size: $weather-location-switch-font-size;
     font-weight: 300;
 
     a {
       text-decoration: none;
-      color: #0b4266;
+      color: $weather-location-link-color;
       border-radius: 50%;
-      height: 30px;
-      width: 30px;
+      height: $weather-location-link-width;
+      width: $weather-location-link-height;
       display: inline-block;
       font-size: 1rem;
       text-align: center;
-      line-height: 28px;
+      line-height: $weather-location-link-line-height;
       margin-bottom: 8px;
       background: transparent;
 
       &.active {
         color: white;
-        background: #073552;
-
+        background: $weather-location-link-active-color;
       }
     }
 
@@ -52,7 +65,7 @@
     color: white;
     font-weight: 100;
     line-height: 1.1;
-    letter-spacing: 0.025em;
+    letter-spacing: $weather-description-letter-spacing;
     margin: 0;
     padding: 0;
     text-align: right;
@@ -77,7 +90,7 @@
     padding-bottom: 0;
     border-top: none;
     border-bottom: none;
-    border-left: 1px solid rgba(255, 255, 255, 0.5);
+    border-left: 1px solid $weather-stats-border-color;
     color: white;
     font-weight: 100;
   }

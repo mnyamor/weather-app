@@ -1,6 +1,6 @@
 $white: #fff;
 $base-font-size: 1rem;
-$search-letter-spacing:0.025em;
+$search-letter-spacing: 0.025em;
 
 $search-input-color: $white;
 $search-input-height: 41px;
@@ -29,63 +29,32 @@ $search-input-width: 100%;
     text-transform: uppercase;
     font-weight: 300;
 
+    &::-webkit-input-placeholder,
+    ::-moz-placeholder,
+    :-ms-input-placeholder,
+    :-moz-placeholder {
+      color: var(--text_light);
+      opacity: 0.35;
+    }
+
     &:hover {
       background-color: #18242b82;
     }
+
     &:focus {
       outline: none;
       color: var(--text_light);
+
+      &::-webkit-input-placeholder,
+      ::-moz-placeholder,
+      :-ms-input-placeholder,
+      :-moz-placeholder {
+        color: var(--text_light);
+        opacity: 0.7;
+        outline: none;
+      }
     }
   }
 }
 
-.search__input::-webkit-input-placeholder {color: var(--text_light); opacity: 0.35;}
-.search__input::-moz-placeholder {color: var(--text_light); opacity: 0.35;}
-.search__input:-ms-input-placeholder {color: var(--text_light); opacity: 0.35;}
-.search__input:-moz-placeholder {color: var(--text_light); opacity: 0.35;}
 
-.search__input:focus {outline: none; color: var(--text_light);}
-.search__input:focus::-webkit-input-placeholder {color: var(--text_light); opacity: 0.7;}
-.search__input:focus::-moz-placeholder {color: var(--text_light); opacity: 0.7;}
-.search__input:focus:-ms-input-placeholder {color: var(--text_light); opacity: 0.7;}
-.search__input:focus:-moz-placeholder {color: var(--text_light); opacity: 0.7;}
-
-
-.searchbar {
-  height: 41px;
-  padding-left: 15px;
-  width: 600px;
-  box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  border: none;
-  outline: none;
-  -webkit-appearance: none;
-  font-weight: 300;
-  color: white;
-  transition: all 0.5s ease;
-  -moz-transition: all 0.5s ease;
-  -o-transition: all 0.5s ease;
-  -webkit-transition: all 0.5s ease;
-
-  &:hover {
-    background-color: rgba(26, 188, 156, 0.7);
-  }
-}
-
-.button {
-  width: 100px;
-}
-
-.searchbar,
-.button {
-  height: 41px;
-  font-family: 'Roboto', sans-serif;
-  letter-spacing: 0.025em;
-  text-transform: uppercase;
-  color: var(--text_light);
-  border: none;
-  background-color: rgba(0, 0, 0, 0.2);
-  font-weight: 300;
-  font-size: 16px;
-
-}
