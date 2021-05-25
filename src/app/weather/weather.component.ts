@@ -42,7 +42,7 @@ export class WeatherComponent extends SubscriptionsManagerDirective implements O
 
   dayText(dt: any): string {
     // todo - fix time( use moment or sth...)
-    const currDate = new Date(dt * 1000).toString().split(' ');
+    const currDate = new Date(dt).toString().split(' ');
     return WeatherUtils.getDayText(currDate[0]) + ' ' + currDate[4]?.substring(0, 5);
   }
 
